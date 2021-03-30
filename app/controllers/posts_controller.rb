@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   # end
 
   def create
-    Post.create(content: params[:content])# Postテーブルにほぞんする為の記述（）の中身は〜〜
-    redirect_to action: :index  # 追記する
+    post = Post.create(content: params[:content])
+    render json:{ post: post }
   end
 end
